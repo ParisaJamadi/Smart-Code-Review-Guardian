@@ -1,0 +1,17 @@
+{
+  "name": "smart-code-review-guardian",
+  "version": "1.0.0",
+  "description": "Claude Code plugin for AI-native PR and local diff review",
+  "private": true,
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "evals": "node evals/run-evals.js",
+    "evals:strict": "node evals/run-evals.js --strict",
+    "validate:sample": "node scripts/validate-review-output.js examples/sample-review-output.md",
+    "git:context": "node scripts/collect-git-context.js",
+    "verify": "npm run evals:strict && npm run validate:sample"
+  }
+}

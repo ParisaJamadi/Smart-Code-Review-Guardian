@@ -1,0 +1,67 @@
+[
+  {
+    "id": "missing-test",
+    "name": "Missing test case",
+    "description": "New function added without corresponding test file change",
+    "input": {
+      "changedFiles": [
+        { "status": "modified", "path": "src/utils/pricing.js" }
+      ],
+      "diff": "export function calculateDiscount(amount, tier) {\n  if (amount < 0) throw new Error('invalid');\n  return amount * (tier === 'gold' ? 0.2 : 0.1);\n}"
+    },
+    "reviewer": "test-reviewer",
+    "sampleOutputFile": "samples/missing-test-output.md"
+  },
+  {
+    "id": "architecture-violation",
+    "name": "Architecture violation",
+    "description": "Controller directly imports database client",
+    "input": {
+      "changedFiles": [
+        { "status": "modified", "path": "src/controllers/userController.js" }
+      ],
+      "diff": "const db = require('../database/client');\nasync function getUser(req, res) {\n  const user = await db.query('SELECT * FROM users WHERE id = ?', [req.params.id]);\n  res.json(user);\n}"
+    },
+    "reviewer": "architecture-reviewer",
+    "sampleOutputFile": "samples/architecture-violation-output.md"
+  },
+  {
+    "id": "documentation-gap",
+    "name": "Documentation gap",
+    "description": "New CLI flag added without README update",
+    "input": {
+      "changedFiles": [
+        { "status": "modified", "path": "src/cli.js" }
+      ],
+      "diff": "program.option('--dry-run', 'Simulate without writes');"
+    },
+    "reviewer": "documentation-reviewer",
+    "sampleOutputFile": "samples/documentation-gap-output.md"
+  },
+  {
+    "id": "false-positive-guard",
+    "name": "False positive guard",
+    "description": "Docs-only change should not trigger missing test warning",
+    "input": {
+      "changedFiles": [
+        { "status": "modified", "path": "README.md" }
+      ],
+      "diff": "## Installation\n\nUpdated install steps for Node 20."
+    },
+    "reviewer": "test-reviewer",
+    "sampleOutputFile": "samples/false-positive-guard-output.md"
+  },
+  {
+    "id": "secret-detection",
+    "name": "Secret detection",
+    "description": "Hardcoded API key-like string in diff",
+    "input": {
+      "changedFiles": [
+        { "status": "modified", "path": "src/config.js" }
+      ],
+      "diff": "export const API_KEY = 'sk-live-abcd1234efgh5678ijkl';"
+    },
+    "reviewer": "risk-reviewer",
+    "sampleOutputFile": "samples/secret-detection-output.md"
+  }
+]

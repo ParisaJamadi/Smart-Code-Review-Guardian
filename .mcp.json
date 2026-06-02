@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "review-context-stub": {
+      "type": "stdio",
+      "command": "node",
+      "args": ["${CLAUDE_PLUGIN_ROOT}/mcp/review-context-stub.js"],
+      "env": {
+        "REVIEW_MCP_MODE": "stub"
+      },
+      "description": "Optional stub MCP server for future CI/repository context integration. No credentials required; returns placeholder responses when external systems are unavailable."
+    }
+  }
+}

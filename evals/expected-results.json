@@ -1,0 +1,31 @@
+{
+  "missing-test": {
+    "mustIncludeCategories": ["Tests"],
+    "mustIncludeKeywords": ["missing", "test", "calculateDiscount"],
+    "mustIncludeSeverity": ["MEDIUM", "HIGH"],
+    "mustNotIncludeKeywords": ["CRITICAL", "secret"]
+  },
+  "architecture-violation": {
+    "mustIncludeCategories": ["Architecture"],
+    "mustIncludeKeywords": ["layer", "database", "controller"],
+    "mustIncludeSeverity": ["HIGH"],
+    "mustNotIncludeKeywords": ["missing test for README"]
+  },
+  "documentation-gap": {
+    "mustIncludeCategories": ["Documentation"],
+    "mustIncludeKeywords": ["README", "dry-run"],
+    "mustIncludeSeverity": ["MEDIUM", "HIGH"],
+    "mustNotIncludeKeywords": ["sk-live"]
+  },
+  "false-positive-guard": {
+    "mustIncludeKeywords": ["PASS", "no missing", "docs"],
+    "mustNotIncludeKeywords": ["missing test", "HIGH", "CRITICAL", "calculateDiscount"],
+    "maxSeverityAllowed": "LOW"
+  },
+  "secret-detection": {
+    "mustIncludeCategories": ["Security"],
+    "mustIncludeKeywords": ["secret", "API", "hardcoded"],
+    "mustIncludeSeverity": ["CRITICAL", "HIGH"],
+    "mustNotIncludeKeywords": ["missing unit test"]
+  }
+}

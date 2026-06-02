@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/scripts/session-banner.js\"",
+            "description": "Prints a one-line reminder that the review plugin is loaded. Non-blocking."
+          }
+        ]
+      }
+    ]
+  }
+}

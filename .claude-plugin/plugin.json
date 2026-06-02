@@ -1,0 +1,25 @@
+{
+  "name": "smart-code-review-guardian",
+  "displayName": "Smart Code Review Guardian",
+  "version": "1.0.0",
+  "description": "AI-native code review plugin for PRs and local changes. Detects missing tests, architecture violations, documentation gaps, risky changes, and poor-quality AI-generated code patterns.",
+  "author": {
+    "name": "Smart Code Review Guardian Contributors"
+  },
+  "license": "MIT",
+  "keywords": [
+    "code-review",
+    "pull-request",
+    "testing",
+    "architecture",
+    "documentation",
+    "security",
+    "evaluations",
+    "ci-cd"
+  ],
+  "commands": "./commands",
+  "agents": "./agents",
+  "skills": "./skills",
+  "hooks": "./hooks/hooks.json",
+  "mcpServers": "./.mcp.json"
+}
