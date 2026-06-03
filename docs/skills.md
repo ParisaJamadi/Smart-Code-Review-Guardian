@@ -38,6 +38,6 @@ Skills are **stack-agnostic workflows**, not one-off prompts:
 
 ## Related
 
-- Commands: [../commands/README.md](../commands/README.md)
-- Agents: [../agents/README.md](../agents/README.md)
+- Commands: [commands.md](commands.md)
+- Agents: [agents.md](agents.md)
 - Policy: [../REVIEW_POLICY.md](../REVIEW_POLICY.md)
