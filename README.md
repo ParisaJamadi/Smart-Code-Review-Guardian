@@ -134,4 +134,4 @@ Walkthrough: [examples/scenario-demo-walkthrough.md](examples/scenario-demo-walk
 
 ## License
 
-MIT — see [LICENSE](LICENSE)
+See [LICENSE](LICENSE) for terms.
